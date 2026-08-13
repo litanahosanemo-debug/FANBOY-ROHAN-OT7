@@ -3,173 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fanboy Rohan 💜</title>
+
+  <title>Fanboy Rohan 💜 OT7</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background: linear-gradient(135deg, #12001f, #3b1266, #16001f);
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080612;
       color: white;
-      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 6, 18, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #35294f;
     }
 
     nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 8%;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
-      color: #e6b3ff;
+      color: #c99cff;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      margin-left: 22px;
+      font-size: 15px;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #e6b3ff;
+      color: #c99cff;
     }
 
     .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 100px 20px;
+      padding: 100px 20px 50px;
+      background:
+        radial-gradient(circle at top, #38205f 0%, #120b22 40%, #080612 75%);
+    }
+
+    .hero-content {
+      max-width: 850px;
     }
 
     .hero h1 {
-      font-size: 55px;
+      font-size: clamp(45px, 9vw, 90px);
       margin-bottom: 15px;
-      color: #f0caff;
+      background: linear-gradient(90deg, #ffffff, #c99cff, #8f5cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      margin-bottom: 20px;
+      color: #ddd;
     }
 
     .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #ddd;
+      max-width: 650px;
+      margin: auto;
+      color: #bbb;
+      font-size: 17px;
     }
 
     .btn {
       display: inline-block;
+      margin-top: 30px;
       padding: 13px 25px;
       border-radius: 30px;
-      background: #9b4dff;
+      background: #8f5cff;
       color: white;
       text-decoration: none;
       font-weight: bold;
-      margin: 5px;
-      border: none;
-      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 25px rgba(143, 92, 255, 0.4);
     }
 
     .btn:hover {
-      background: #c477ff;
-      transform: scale(1.05);
+      transform: translateY(-4px);
+      background: #a978ff;
     }
 
     section {
-      padding: 70px 8%;
+      max-width: 1050px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .section-title {
       text-align: center;
+      font-size: 38px;
+      margin-bottom: 45px;
+      color: #d0a9ff;
     }
 
-    section h2 {
-      font-size: 35px;
-      margin-bottom: 25px;
-      color: #e5b7ff;
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: #c8c8c8;
+      font-size: 17px;
     }
 
-    .card-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      width: 280px;
-      padding: 30px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
+      background: #120d20;
+      border: 1px solid #35294f;
+      border-radius: 18px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #9c6cff;
+      box-shadow: 0 10px 35px rgba(111, 65, 180, 0.25);
+    }
+
+    .card .emoji {
+      font-size: 45px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      margin-bottom: 15px;
-      color: #e9c4ff;
+      color: #d7b5ff;
+      margin-bottom: 8px;
     }
 
-    .profile {
-      max-width: 500px;
-      margin: auto;
-      padding: 35px;
-      border-radius: 25px;
-      background: rgba(255,255,255,0.08);
+    .card p {
+      color: #aaa;
+      font-size: 14px;
     }
 
-    .profile-circle {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      background: linear-gradient(135deg,#9b4dff,#e0a3ff);
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-box {
+      height: 230px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #291644, #11101b);
+      border: 1px solid #392852;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 45px;
-    }
-
-    form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input {
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
+      text-align: center;
+      color: #aaa;
       font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .gallery-box:hover {
+      transform: scale(1.03);
+      border-color: #a778ff;
+    }
+
+    .social {
+      text-align: center;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 20px;
+      border: 1px solid #493568;
+      border-radius: 25px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      background: #8f5cff;
+      border-color: #8f5cff;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.4);
-      color: #ccc;
+      padding: 30px 20px;
+      background: #05040b;
+      border-top: 1px solid #292039;
+      color: #888;
     }
 
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 40px;
-      }
+    footer strong {
+      color: #c99cff;
+    }
 
+    @media (max-width: 650px) {
       nav {
         flex-direction: column;
         gap: 12px;
       }
 
       nav a {
-        margin: 5px;
+        margin: 0 7px;
+        font-size: 13px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      section {
+        padding: 70px 18px;
       }
     }
   </style>
@@ -177,138 +250,178 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">💜 Fanboy Rohan</div>
+  <header>
+    <nav>
+      <div class="logo">💜 FANBOY ROHAN</div>
 
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#profile">Profile</a>
-      <a href="#login">Login</a>
-    </div>
-  </nav>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ot7">OT7</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#social">Social</a>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Home -->
+
+  <!-- HERO -->
   <section class="hero" id="home">
-    <h1>💜 Fanboy Rohan</h1>
+    <div class="hero-content">
 
-    <p>
-      Welcome to my little world ✨<br>
-      BTS • ARMY • Music • Memories
-    </p>
+      <h1>FANBOY ROHAN</h1>
 
-    <a href="#about" class="btn">Explore 💜</a>
-    <a href="#profile" class="btn">My Profile</a>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Me 👑</h2>
-
-    <div class="card-container">
-
-      <div class="card">
-        <h3>💜 My Name</h3>
-        <p>Fanboy Rohan</p>
-      </div>
-
-      <div class="card">
-        <h3>🎵 My Passion</h3>
-        <p>BTS, Music & Creating Content</p>
-      </div>
-
-      <div class="card">
-        <h3>🌍 My Community</h3>
-        <p>ARMY Family 💜</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Profile -->
-  <section id="profile">
-    <h2>My Profile 👤</h2>
-
-    <div class="profile">
-
-      <div class="profile-circle">
-        💜
-      </div>
-
-      <h2>Fanboy Rohan</h2>
+      <h2>💜 OT7 Forever • Music • Memories • Love</h2>
 
       <p>
-        BTS Lover Boy 💜<br>
-        Welcome to my website!
+        Welcome to my little corner of the internet.
+        A place for music, memories, favorite moments,
+        and everything that makes being an OT7 fan special. 💜
       </p>
 
-      <br>
-
-      <button class="btn" onclick="showMessage()">
-        Follow 💜
-      </button>
+      <a href="#about" class="btn">Explore Website ✨</a>
 
     </div>
   </section>
 
-  <!-- Login / Signup -->
-  <section id="login">
-    <h2>Login / Signup 🔐</h2>
 
-    <form onsubmit="loginUser(event)">
+  <!-- ABOUT -->
+  <section id="about">
 
-      <input
-        type="text"
-        id="name"
-        placeholder="Your Name"
-        required
-      >
+    <h2 class="section-title">About Me 💜</h2>
 
-      <input
-        type="email"
-        id="email"
-        placeholder="Email Address"
-        required
-      >
+    <p class="about">
+      Hi! I'm Rohan. Welcome to my fan website!
+      This website is made with love for music, amazing memories,
+      and the OT7 journey. Here you can find my favorite moments,
+      photos, videos and social links.
+      
+      <br><br>
 
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        required
-      >
+      <strong>OT7 always and forever. 💜</strong>
+    </p>
 
-      <button class="btn" type="submit">
-        Login / Signup
-      </button>
-
-    </form>
-
-    <p id="loginMessage"></p>
   </section>
 
-  <!-- Footer -->
+
+  <!-- OT7 -->
+  <section id="ot7">
+
+    <h2 class="section-title">OT7 💜</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="emoji">🐨</div>
+        <h3>RM</h3>
+        <p>Leader • Music • Wisdom</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐹</div>
+        <h3>Jin</h3>
+        <p>Worldwide Handsome ✨</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐱</div>
+        <h3>SUGA</h3>
+        <p>Music • Genius • Agust D</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐿️</div>
+        <h3>j-hope</h3>
+        <p>Hope • Dance • Sunshine</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐥</div>
+        <h3>Jimin</h3>
+        <p>Dance • Voice • Angel</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐻</div>
+        <h3>V</h3>
+        <p>Art • Music • Style</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🐰</div>
+        <h3>Jungkook</h3>
+        <p>Golden Maknae • Music</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section id="gallery">
+
+    <h2 class="section-title">My Gallery 📸</h2>
+
+    <div class="gallery">
+
+      <div class="gallery-box">
+        📸<br><br>
+        Add Your Favorite Photo
+      </div>
+
+      <div class="gallery-box">
+        💜<br><br>
+        OT7 Memories
+      </div>
+
+      <div class="gallery-box">
+        🎤<br><br>
+        Favorite Concert
+      </div>
+
+      <div class="gallery-box">
+        ✨<br><br>
+        Favorite Moment
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOCIAL -->
+  <section id="social">
+
+    <h2 class="section-title">Find Me Online 🌐</h2>
+
+    <div class="social">
+
+      <!-- নিজের link এখানে বসাবে -->
+      <a href="#" target="_blank">▶ YouTube</a>
+
+      <a href="#" target="_blank">📷 Instagram</a>
+
+      <a href="#" target="_blank">📘 Facebook</a>
+
+      <a href="#" target="_blank">🎵 TikTok</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
   <footer>
-    <p>💜 Made with love by Fanboy Rohan</p>
-    <p>© 2026 Fanboy Rohan. All Rights Reserved.</p>
+
+    Made with 💜 by <strong>Rohan</strong>
+
+    <br>
+
+    © 2026 Fanboy Rohan • OT7 Forever
+
   </footer>
 
-  <script>
 
-    function showMessage() {
-      alert("Thank you for supporting Fanboy Rohan! 💜✨");
-    }
-
-    function loginUser(event) {
-
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-
-      document.getElementById("loginMessage").innerHTML =
-        "Welcome, " + name + "! 💜 Your demo login was successful.";
-
-    }
-
-  </script>
+</body>
+</html>
